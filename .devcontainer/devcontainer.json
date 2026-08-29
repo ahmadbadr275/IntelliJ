@@ -1,12 +1,16 @@
 {
-  "image": "://microsoft.com",
-  "features": {
-    "ghcr.io/devcontainers/features/desktop-lite:1": {}
-  },
-  "forwardPorts":,
-  "portsAttributes": {
-    "6080": {
-      "label": "desktop"
-    }
-  }
+    "name": "IntelliJ JavaFX Environment",
+    "image": "://microsoft.com",
+    "features": {
+        "ghcr.io/devcontainers/features/desktop-lite:1": {
+            "version": "latest"
+        }
+    },
+    "portsAttributes": {
+        "6080": {
+            "label": "Virtual Desktop",
+            "onAutoForward": "openBrowser"
+        }
+    },
+    "postCreateCommand": "bash .devcontainer/install-intellij.sh"
 }
